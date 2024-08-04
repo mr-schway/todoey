@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoey/widgets/task_tile.dart';
 
 class TasksScreen extends StatelessWidget {
   const TasksScreen({super.key});
@@ -48,12 +49,20 @@ class TasksScreen extends StatelessWidget {
           ),
           Expanded(
             child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(30),
                   topRight: Radius.circular(30),
                 ),
+              ),
+              child: ListView(
+                children: const [
+                  TaskTile(),
+                  TaskTile(),
+                  TaskTile(),
+                ],
               ),
             ),
           ),
