@@ -20,13 +20,26 @@ class TasksScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const CircleAvatar(
-                  radius: 30,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.list,
-                    size: 40,
-                    color: Colors.indigo,
+                GestureDetector(
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      builder: (context) {
+                        return Container(
+                          padding: const EdgeInsets.all(30),
+                          child: const Text('Long Press To Delete The Task'),
+                        );
+                      },
+                    );
+                  },
+                  child: const CircleAvatar(
+                    radius: 30,
+                    backgroundColor: Colors.white,
+                    child: Icon(
+                      Icons.list,
+                      size: 40,
+                      color: Colors.indigo,
+                    ),
                   ),
                 ),
                 const SizedBox(
